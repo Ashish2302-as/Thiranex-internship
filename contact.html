@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Ashish Singh</title>
+  <meta name="description" content="Contact Ashish Singh using an accessible, tab-navigable form.">
+  <meta name="author" content="Ashish Singh">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="contact.html">
+</head>
+<body>
+  <a href="#main-content">Skip to main content</a>
+
+  <header>
+    <nav aria-label="Primary navigation" role="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main-content" role="main">
+    <section aria-labelledby="contact-title">
+      <h1 id="contact-title">Contact</h1>
+      <p>Use the form below to send a message. All fields are labeled for assistive technology.</p>
+
+      <form action="#" method="post" aria-labelledby="contact-form-title" role="form">
+        <fieldset>
+          <legend id="contact-form-title">Send a message</legend>
+
+          <p>
+            <label for="name">Full name</label><br>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+          </p>
+
+          <p>
+            <label for="email">Email address</label><br>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </p>
+
+          <p>
+            <label for="subject">Subject</label><br>
+            <input id="subject" name="subject" type="text" autocomplete="off" required>
+          </p>
+
+          <p>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </p>
+
+          <button type="submit">Send message</button>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>Email: <a href="mailto:singhashish6307@gmail.com">singhashish6307@gmail.com</a></p>
+  </footer>
+</body>
+</html>
