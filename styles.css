@@ -281,6 +281,306 @@ footer {
   text-align: center;
 }
 
+body.todo-app {
+  min-height: 100vh;
+  font-family: "Bahnschrift", "Aptos", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(96, 165, 250, 0.26), transparent 28%),
+    radial-gradient(circle at top right, rgba(251, 191, 36, 0.22), transparent 24%),
+    linear-gradient(180deg, #07111c 0%, #0b1723 100%);
+  color: #ecf5ff;
+}
+
+body.todo-app .skip-link {
+  background: #ecf5ff;
+  color: #07111c;
+}
+
+body.todo-app header,
+body.todo-app main,
+body.todo-app footer {
+  width: min(100% - 1.25rem, 72rem);
+}
+
+body.todo-app header {
+  padding-top: 1.25rem;
+}
+
+body.todo-app .todo-hero {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(236, 245, 255, 0.12);
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(13, 27, 42, 0.92), rgba(18, 40, 62, 0.78));
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+}
+
+body.todo-app .hero-copy {
+  display: grid;
+  gap: 0.75rem;
+}
+
+body.todo-app .eyebrow,
+body.todo-app .section-kicker {
+  margin: 0;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #8dc7ff;
+}
+
+body.todo-app h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 10vw, 6rem);
+}
+
+body.todo-app .hero-lead {
+  max-width: 46rem;
+  margin: 0;
+  color: rgba(236, 245, 255, 0.82);
+  font-size: 1.05rem;
+}
+
+body.todo-app .hero-stats,
+body.todo-app .tool-stats {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+}
+
+body.todo-app .hero-stats > div,
+body.todo-app .tool-stats > div {
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(236, 245, 255, 0.12);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+body.todo-app .hero-stats dt,
+body.todo-app .tool-stats dt {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(236, 245, 255, 0.68);
+}
+
+body.todo-app .hero-stats dd,
+body.todo-app .tool-stats dd {
+  margin: 0.35rem 0 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+body.todo-app main.todo-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0 2rem;
+}
+
+body.todo-app .panel {
+  border: 1px solid rgba(236, 245, 255, 0.12);
+  background: rgba(10, 19, 31, 0.76);
+}
+
+body.todo-app .composer-panel,
+body.todo-app .board-panel,
+body.todo-app .side-panel {
+  padding: 1.25rem;
+}
+
+body.todo-app .panel-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+body.todo-app .filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+body.todo-app .filters button,
+body.todo-app .secondary,
+body.todo-app .ghost {
+  border-radius: 999px;
+}
+
+body.todo-app .filters button {
+  border: 1px solid rgba(236, 245, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ecf5ff;
+}
+
+body.todo-app .filters button[aria-pressed="true"] {
+  background: #5aa9ff;
+  color: #07111c;
+}
+
+body.todo-app .composer-row {
+  display: grid;
+  gap: 0.75rem;
+}
+
+body.todo-app .helper,
+body.todo-app .status-message,
+body.todo-app .tool-copy,
+body.todo-app .empty-state,
+body.todo-app .task-meta {
+  color: rgba(236, 245, 255, 0.72);
+}
+
+body.todo-app .status-message {
+  min-height: 1.5rem;
+}
+
+body.todo-app .task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+body.todo-app .task {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
+  border: 1px solid rgba(236, 245, 255, 0.12);
+  border-radius: 1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+}
+
+body.todo-app .task-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+body.todo-app .task-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  flex: 1;
+  margin: 0;
+}
+
+body.todo-app .task-check input {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.2rem;
+  accent-color: #5aa9ff;
+}
+
+body.todo-app .task-title {
+  display: grid;
+  gap: 0.3rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+body.todo-app .task.is-completed .task-title span {
+  color: rgba(236, 245, 255, 0.62);
+  text-decoration: line-through;
+  text-decoration-thickness: 0.12em;
+}
+
+body.todo-app .task-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+body.todo-app .task-actions button,
+body.todo-app .tool-actions button,
+body.todo-app #task-submit {
+  min-height: 2.75rem;
+  padding-inline: 1rem;
+}
+
+body.todo-app .task-edit {
+  display: grid;
+  gap: 0.75rem;
+}
+
+body.todo-app .task-edit-row {
+  display: grid;
+  gap: 0.75rem;
+}
+
+body.todo-app .secondary {
+  background: #5aa9ff;
+  color: #07111c;
+}
+
+body.todo-app .ghost {
+  background: transparent;
+  border: 1px solid rgba(236, 245, 255, 0.16);
+  color: #ecf5ff;
+}
+
+body.todo-app .tool-actions {
+  display: grid;
+  gap: 0.75rem;
+}
+
+body.todo-app .empty-state {
+  margin: 0;
+  padding: 1rem;
+  border: 1px dashed rgba(236, 245, 255, 0.18);
+  border-radius: 1rem;
+}
+
+body.todo-app input,
+body.todo-app textarea {
+  background: rgba(7, 17, 28, 0.9);
+  border-color: rgba(236, 245, 255, 0.14);
+  color: #ecf5ff;
+}
+
+body.todo-app .task-edit input,
+body.todo-app #task-input {
+  background: rgba(7, 17, 28, 0.94);
+}
+
+body.todo-app .task-actions button,
+body.todo-app .tool-actions button,
+body.todo-app #task-submit,
+body.todo-app .filters button,
+body.todo-app .secondary,
+body.todo-app .ghost {
+  transition: transform 0.2s ease, filter 0.2s ease, background-color 0.2s ease;
+}
+
+body.todo-app .task-actions button:hover,
+body.todo-app .task-actions button:focus-visible,
+body.todo-app .tool-actions button:hover,
+body.todo-app .tool-actions button:focus-visible,
+body.todo-app #task-submit:hover,
+body.todo-app #task-submit:focus-visible,
+body.todo-app .filters button:hover,
+body.todo-app .filters button:focus-visible,
+body.todo-app .secondary:hover,
+body.todo-app .secondary:focus-visible,
+body.todo-app .ghost:hover,
+body.todo-app .ghost:focus-visible {
+  transform: translateY(-1px);
+}
+
+body.todo-app footer {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  text-align: center;
+  border-color: rgba(236, 245, 255, 0.12);
+  background: rgba(10, 19, 31, 0.76);
+}
+
 @media (min-width: 48rem) {
   nav ul {
     justify-content: flex-start;
@@ -341,5 +641,48 @@ footer {
   aside,
   form {
     padding: 1.5rem;
+  }
+
+  body.todo-app .todo-hero {
+    grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
+    align-items: end;
+    padding: 2rem;
+  }
+
+  body.todo-app .hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body.todo-app main.todo-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  body.todo-app .composer-panel {
+    grid-column: 1 / span 5;
+  }
+
+  body.todo-app .board-panel {
+    grid-column: 6 / -1;
+  }
+
+  body.todo-app .side-panel {
+    grid-column: 1 / span 5;
+  }
+
+  body.todo-app .composer-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  body.todo-app .task-edit-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  body.todo-app .tool-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.todo-app main.todo-grid {
+    gap: 1.25rem;
   }
 }

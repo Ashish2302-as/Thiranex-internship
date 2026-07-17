@@ -3,76 +3,118 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ashish Singh | Web Developer</title>
-  <meta name="description" content="Ashish Singh is a web developer and Computer Science Engineering student focused on accessible, semantic, and secure web applications.">
+  <title>TaskFlow | To-Do List</title>
+  <meta name="description" content="TaskFlow is a fast, accessible to-do list application with localStorage persistence, CRUD editing, and task filtering.">
   <meta name="author" content="Ashish Singh">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="index.html">
   <link rel="stylesheet" href="styles.css">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ashish Singh | Web Developer">
-  <meta property="og:description" content="Accessible personal portfolio with details, projects, and contact information for Ashish Singh.">
+  <meta property="og:title" content="TaskFlow | To-Do List">
+  <meta property="og:description" content="A responsive, client-side todo app with persistent state and accessible interactions.">
   <meta property="og:url" content="index.html">
   <meta name="twitter:card" content="summary">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ashish Singh",
-      "jobTitle": "Web Developer",
-      "url": "index.html"
+      "@type": "WebApplication",
+      "name": "TaskFlow",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "Web",
+      "description": "A client-side todo list with filtering, editing, and local persistence."
     }
   </script>
 </head>
-<body>
+<body class="todo-app">
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
-  <header>
-    <nav aria-label="Primary navigation" role="navigation">
-      <ul>
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="todo-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">TaskFlow</p>
+      <h1>To-Do List</h1>
+      <p class="hero-lead">Capture work, track progress, and keep every change saved locally in your browser.</p>
+    </div>
+
+    <dl class="hero-stats" aria-label="Task summary">
+      <div>
+        <dt>Total</dt>
+        <dd data-stat="total">0</dd>
+      </div>
+      <div>
+        <dt>Active</dt>
+        <dd data-stat="active">0</dd>
+      </div>
+      <div>
+        <dt>Done</dt>
+        <dd data-stat="completed">0</dd>
+      </div>
+    </dl>
   </header>
 
-  <main id="main-content" role="main">
-    <section aria-labelledby="hero-title">
-      <h1 id="hero-title">Ashish Singh</h1>
-      <p>Web Developer and fourth-year Computer Science Engineering student focused on accessible, semantic, and secure web applications.</p>
-      <p>I enjoy solving problems, building scalable systems, and continuously improving my technical skills.</p>
+  <main id="main-content" class="todo-grid" role="main">
+    <section class="panel composer-panel" aria-labelledby="composer-title">
+      <div>
+        <p class="section-kicker">Quick add</p>
+        <h2 id="composer-title">Create a task</h2>
+      </div>
+
+      <form id="task-form" novalidate>
+        <label for="task-input">Task title</label>
+        <div class="composer-row">
+          <input id="task-input" name="title" type="text" maxlength="120" autocomplete="off" placeholder="e.g. Review JavaScript notes" required>
+          <button type="submit" id="task-submit">Add task</button>
+        </div>
+        <p class="helper">Press Enter to add a task. Everything is stored automatically on this device.</p>
+      </form>
     </section>
 
-    <section aria-labelledby="highlights-title">
-      <h2 id="highlights-title">Highlights</h2>
-      <article aria-labelledby="highlight-1">
-        <h3 id="highlight-1">Web Development</h3>
-        <p>Focused on building clean, maintainable interfaces and backend-ready web applications.</p>
-      </article>
-      <article aria-labelledby="highlight-2">
-        <h3 id="highlight-2">Java and Spring Boot</h3>
-        <p>Building production-style applications with Java, Spring Boot, and secure backend patterns.</p>
-      </article>
-      <article aria-labelledby="highlight-3">
-        <h3 id="highlight-3">Data Structures and Algorithms</h3>
-        <p>Strengthening problem-solving skills with a strong foundation in DSA and Java Collections.</p>
-      </article>
+    <section class="panel board-panel" aria-labelledby="board-title">
+      <div class="panel-header">
+        <div>
+          <p class="section-kicker">Task board</p>
+          <h2 id="board-title">Your tasks</h2>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="active" aria-pressed="false">Active</button>
+          <button type="button" data-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+      </div>
+
+      <p id="status-message" class="status-message" aria-live="polite"></p>
+      <ul id="task-list" class="task-list" aria-label="Task list"></ul>
+      <p id="empty-state" class="empty-state">No tasks yet. Add your first item above.</p>
     </section>
 
-    <aside aria-label="Quick facts">
-      <h2>Quick Facts</h2>
-      <ul>
-        <li>Location: Bhubneshwar, Odisha, India</li>
-        <li>Focus: Web development, Java, and cloud technologies</li>
-        <li>Status: Open to learning opportunities and real-world projects</li>
-      </ul>
+    <aside class="panel side-panel" aria-label="Task tools">
+      <h2>Tools</h2>
+      <p class="tool-copy">Every update persists automatically with <strong>localStorage</strong>.</p>
+
+      <dl class="tool-stats">
+        <div>
+          <dt>All</dt>
+          <dd data-stat="total-side">0</dd>
+        </div>
+        <div>
+          <dt>Active</dt>
+          <dd data-stat="active-side">0</dd>
+        </div>
+        <div>
+          <dt>Completed</dt>
+          <dd data-stat="completed-side">0</dd>
+        </div>
+      </dl>
+
+      <div class="tool-actions">
+        <button type="button" id="clear-completed" class="secondary">Clear completed</button>
+        <button type="button" id="clear-all" class="ghost">Delete all tasks</button>
+      </div>
+
+      <p class="helper">Tip: use Edit to change a task, or Escape to cancel while editing.</p>
     </aside>
   </main>
 
-  <footer role="contentinfo">
-    <p>&copy; 2026 Ashish Singh. All rights reserved.</p>
-  </footer>
+  <script src="app.js" defer></script>
 </body>
 </html>
